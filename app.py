@@ -1,14 +1,13 @@
-from flask import Flask, request, render_template, Markup
+from flask import Flask
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return '<h1>Celsius to Kelvin Converter: Type a number after the last / in the URL</h1>'
+    return '<h1>Celsius to Kelvin Converter</h1><h2>Type a number at the end of the URL</h2><h3>IE) localhost:5000/0</h3>'
 
 @app.route("/<string:celsius>")
 def convert_celsius_to_kelvin(celsius):
-    
     try:
         celsius = float(celsius)
     except:
